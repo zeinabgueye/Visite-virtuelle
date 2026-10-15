@@ -1,0 +1,295 @@
+{
+  "default": {
+    "firstScene": "couloir_RC",
+    "sceneFadeDuration": 1000,
+    "autoLoad": true,
+    "compass": false
+  },
+
+  "scenes": {
+
+    "couloir_RC": {
+      "title": "EPF Africa - Couloir Rez-de-Chaussée",
+      "panorama": "images/couloir_RC.jpg",
+      "pitch": 0,
+      "yaw": 0,
+      "hfov": 100,
+      "hotSpots": [
+  
+        { "pitch": 0, "yaw": -85,  "type": "scene", "sceneId": "cuisine_rc",       "text": "Cuisine" },
+        { "pitch": 0, "yaw": 123,  "type": "scene", "sceneId": "salle_inf_rc",     "text": "Salle Informatique" },
+        { "pitch": 0, "yaw": -50, "type": "scene", "sceneId": "salle_projet_rc",  "text": "Salle Projet" },
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "bureauprof_rc",    "text": "Bureau Professeurs" },
+        { "pitch": 0, "yaw": 132, "type": "scene", "sceneId": "bureauresp_rc",    "text": "Bureau Responsable" }
+
+      ]
+    },
+
+    "patio": {
+      "title": "Patio - EPF Africa",
+      "panorama": "images/patio.jpg",
+      "pitch": 0,
+      "yaw": 0,
+      "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+      ]
+    },
+
+    "cuisine_rc": {
+      "title": "Cuisine - RC",
+      "panorama": "images/cuisine_RC.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 250, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+      ]
+    },
+
+    "salle_inf_rc": {
+      "title": "Salle Informatique - RC",
+      "panorama": "images/salle_inf_RC.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 200, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+      ]
+    },
+
+    "salle_projet_rc": {
+      "title": "Salle Projet - RC",
+      "panorama": "images/salle_projet_RC.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 290, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+      ]
+    },
+
+    "bureauprof_rc": {
+      "title": "Bureau Professeurs - RC",
+      "panorama": "images/salle_prof_RC.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+      ]
+    },
+
+    "bureauresp_rc": {
+      "title": "Bureau Responsable - RC",
+      "panorama": "images/bureau_thiam.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 120, "type": "scene", "sceneId": "couloir_RC", "text": "← Retour Couloir RC" }
+  
+      ]
+    },
+
+    "couloir_E1": {
+      "title": "Couloir - Étage 1",
+      "panorama": "images/couloir_E1.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 0,   "type": "scene", "sceneId": "grandesalle_E1",    "text": "Grande Salle" },
+        { "pitch": 0, "yaw": 90,  "type": "scene", "sceneId": "sallereunion_E1",   "text": "Salle de Réunion" },
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "bureaudjibril_E1",  "text": "Bureau Djibril" },
+        { "pitch": 0, "yaw": 270, "type": "scene", "sceneId": "compta_e1",         "text": "Comptabilité" },
+        { "pitch": -5, "yaw": 45, "type": "scene", "sceneId": "couloir_RC",        "text": "⬇ Descendre RC" },
+        { "pitch": 5, "yaw": 135, "type": "scene", "sceneId": "couloir_E2",        "text": "⬆ Monter Étage 2" }
+      ]
+    },
+
+    "grandesalle_E1": {
+      "title": "Grande Salle - Étage 1",
+      "panorama": "images/grande_salle_E1.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E1", "text": "← Retour Couloir E1" }
+      ]
+    },
+
+    "petiteSalle_E1": {
+      "title": "Salle de Réunion - Étage 1",
+      "panorama": "images/petite_salle_E1.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E1", "text": "← Retour Couloir E1" }
+      ]
+    },
+
+    "bureaudjibril_E1": {
+      "title": "Bureau Djibril - Étage 1",
+      "panorama": "images/BureauDjibril_E1.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E1", "text": "← Retour Couloir E1" }
+      ]
+    },
+
+    "compta_e1": {
+      "title": "Comptabilité - Étage 1",
+      "panorama": "images/Compta_E1.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E1", "text": "← Retour Couloir E1" }
+      ]
+    },
+
+    "couloir_E2": {
+      "title": "Couloir - Étage 2",
+      "panorama": "images/couloir_E2.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 0,   "type": "scene", "sceneId": "grandesalle_E2",    "text": "Grande Salle" },
+        { "pitch": 0, "yaw": 90,  "type": "scene", "sceneId": "petitesalle_E2",    "text": "Petite Salle" },
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "bureaudiomath_E2",  "text": "Bureau Amath" },
+        { "pitch": 0, "yaw": 270, "type": "scene", "sceneId": "bureaomayo_E2",     "text": "Bureau Mayo" },
+        { "pitch": -5, "yaw": 45, "type": "scene", "sceneId": "couloir_E1",        "text": "⬇ Descendre Étage 1" },
+        { "pitch": 5, "yaw": 135, "type": "scene", "sceneId": "couloir_E3",        "text": "⬆ Monter Étage 3" }
+      ]
+    },
+
+    "grandesalle_E2": {
+      "title": "Grande Salle - Étage 2",
+      "panorama": "images/Grandesalle_E2.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E2", "text": "← Retour Couloir E2" }
+      ]
+    },
+
+    "petitesalle_E2": {
+      "title": "Petite Salle - Étage 2",
+      "panorama": "images/Petitesalle_E2.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E2", "text": "← Retour Couloir E2" }
+      ]
+    },
+
+    "bureaudiomath_E2": {
+      "title": "Bureau Amath - Étage 2",
+      "panorama": "images/BureauAmath_E2.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E2", "text": "← Retour Couloir E2" }
+      ]
+    },
+
+    "bureaomayo_E2": {
+      "title": "Bureau Mayo - Étage 2",
+      "panorama": "images/BureauMayo_E2.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E2", "text": "← Retour Couloir E2" }
+      ]
+    },
+
+    "couloir_E3": {
+      "title": "Couloir - Étage 3",
+      "panorama": "images/couloir_E3.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 0,   "type": "scene", "sceneId": "grandesalle_E3",    "text": "Grande Salle" },
+        { "pitch": 0, "yaw": 90,  "type": "scene", "sceneId": "petitesalle_E3",    "text": "Petite Salle" },
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "bureaudr_E3",       "text": "Bureau Dr" },
+        { "pitch": 0, "yaw": 270, "type": "scene", "sceneId": "salleprojet_E3",    "text": "Salle Projet" },
+        { "pitch": -5, "yaw": 45, "type": "scene", "sceneId": "couloir_E2",        "text": "⬇ Descendre Étage 2" },
+        { "pitch": 5, "yaw": 135, "type": "scene", "sceneId": "couloir_E4",        "text": "⬆ Monter Étage 4" }
+      ]
+    },
+
+    "grandesalle_E3": {
+      "title": "Grande Salle - Étage 3",
+      "panorama": "images/Grandesalle_E3.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E3", "text": "← Retour Couloir E3" }
+      ]
+    },
+
+    "petitesalle_E3": {
+      "title": "Petite Salle - Étage 3",
+      "panorama": "images/Petitesalle_E3.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E3", "text": "← Retour Couloir E3" }
+      ]
+    },
+
+    "bureaudr_E3": {
+      "title": "Bureau Dr - Étage 3",
+      "panorama": "images/BureauDr_E3.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E3", "text": "← Retour Couloir E3" }
+      ]
+    },
+
+    "salleprojet_E3": {
+      "title": "Salle Projet - Étage 3",
+      "panorama": "images/Salle_projet_E3.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E3", "text": "← Retour Couloir E3" }
+      ]
+    },
+
+    "couloir_E4": {
+      "title": "Couloir - Étage 4",
+      "panorama": "images/couloir_E4.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 0,   "type": "scene", "sceneId": "grandesalle_E4",    "text": "Grande Salle" },
+        { "pitch": 0, "yaw": 90,  "type": "scene", "sceneId": "petitesalle_E4",    "text": "Petite Salle" },
+        { "pitch": 0, "yaw": 135, "type": "scene", "sceneId": "salleprojet_E4",    "text": "Salle Projet" },
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "salleprojet_E4_2",  "text": "Salle Projet 2" },
+        { "pitch": 0, "yaw": 270, "type": "scene", "sceneId": "toilettes_E4",      "text": "Toilettes" },
+        { "pitch": -5, "yaw": 45, "type": "scene", "sceneId": "couloir_E3",        "text": "⬇ Descendre Étage 3" }
+      ]
+    },
+
+    "grandesalle_E4": {
+      "title": "Grande Salle - Étage 4",
+      "panorama": "images/Grandesalle_E4.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E4", "text": "← Retour Couloir E4" }
+      ]
+    },
+
+    "petitesalle_E4": {
+      "title": "Petite Salle - Étage 4",
+      "panorama": "images/Petitesalle_E4.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E4", "text": "← Retour Couloir E4" }
+      ]
+    },
+
+    "salleprojet_E4": {
+      "title": "Salle Projet - Étage 4",
+      "panorama": "images/Salle_projet_E4.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E4", "text": "← Retour Couloir E4" }
+      ]
+    },
+
+    "salleprojet_E4_2": {
+      "title": "Salle Projet 2 - Étage 4",
+      "panorama": "images/Salle_projet_E4 (2).jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E4", "text": "← Retour Couloir E4" }
+      ]
+    },
+
+    "toilettes_E4": {
+      "title": "Toilettes - Étage 4",
+      "panorama": "images/Toilettes_E4.jpg",
+      "pitch": 0, "yaw": 0, "hfov": 100,
+      "hotSpots": [
+        { "pitch": 0, "yaw": 180, "type": "scene", "sceneId": "couloir_E4", "text": "← Retour Couloir E4" }
+      ]
+    }
+
+  }
+}

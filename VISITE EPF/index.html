@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visite Virtuelle – EPF Africa</title>
+
+  <link rel="stylesheet" href="pannellum/pannellum.css" />
+  <script src="pannellum/pannellum.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f1117;
+      color: #e0e0e0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1a1d27;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #2e7d32;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    header span {
+      font-size: 0.8rem;
+      color: #66bb6a;
+      background: rgba(46, 125, 50, 0.15);
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid #2e7d32;
+      white-space: nowrap;
+    }
+
+    /* ── Zone principale ── */
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    #panorama {
+      flex: 1;
+      height: 100%;
+      min-width: 0;
+    }
+
+    /* Sidebar desktop (à droite) */
+    .sidebar {
+      width: 220px;
+      background-color: #13161f;
+      border-left: 1px solid #1e222e;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 12px;
+      gap: 8px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #66bb6a;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e222e;
+      flex-shrink: 0;
+    }
+
+    .scene-btn {
+      background: #1a1d27;
+      border: 1px solid #1e222e;
+      color: #ccc;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-align: left;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .scene-btn:hover {
+      background: #2e7d32;
+      border-color: #2e7d32;
+      color: #fff;
+    }
+
+    .scene-btn.active {
+      background: rgba(46, 125, 50, 0.2);
+      border-color: #2e7d32;
+      color: #66bb6a;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #444;
+      padding: 6px;
+      background: #0f1117;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE MOBILE (≤ 640px)
+       Layout vertical : viewer / sidebar
+    ══════════════════════════════════ */
+    @media (max-width: 640px) {
+
+      body {
+        height: 100dvh; /* dynamic viewport height (évite la barre du navigateur) */
+      }
+
+      header h1 { font-size: 0.9rem; }
+
+      /* On empile verticalement */
+      .main {
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      /* Le viewer prend 55% de la hauteur disponible */
+      #panorama {
+        flex: 0 0 55%;
+        width: 100%;
+        height: auto;
+      }
+
+      /* La sidebar devient une barre horizontale scrollable en bas */
+      .sidebar {
+        width: 100%;
+        flex: 1;
+        border-left: none;
+        border-top: 1px solid #1e222e;
+        flex-direction: column;
+        padding: 10px 12px;
+        overflow-y: auto;
+        gap: 6px;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+      }
+
+      /* Boutons plus compacts sur mobile */
+      .scene-btn {
+        padding: 10px 12px;
+        font-size: 0.82rem;
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Visite Virtuelle – EPF Africa</h1>
+    <span>360°</span>
+  </header>
+
+  <div class="main">
+    <div id="panorama"></div>
+
+    <nav class="sidebar">
+      <h2>Lieux</h2>
+      <div id="scene-list"></div>
+    </nav>
+  </div>
+
+  <footer>EPF Africa – Projet Bachelor 2 CSI &nbsp;|&nbsp; Visite 360° powered by Pannellum</footer>
+
+  <script>
+    let viewer;
+
+    fetch('config.json')
+      .then(response => response.json())
+      .then(config => {
+        initViewer(config);
+        buildSidebar(config);
+      })
+      .catch(err => {
+        console.error('Erreur lors du chargement de config.json :', err);
+        document.getElementById('panorama').innerHTML =
+          '<p style="color:red;padding:20px;">Impossible de charger config.json</p>';
+      });
+
+    function initViewer(config) {
+      viewer = pannellum.viewer('panorama', config);
+      viewer.on('scenechange', function (sceneId) {
+        setActiveButton(sceneId);
+      });
+    }
+
+    function buildSidebar(config) {
+      const container = document.getElementById('scene-list');
+      const scenes = config.scenes;
+
+      for (const sceneId in scenes) {
+        const scene = scenes[sceneId];
+        const btn = document.createElement('button');
+        btn.className = 'scene-btn';
+        btn.dataset.scene = sceneId;
+        btn.textContent = scene.title || sceneId;
+
+        btn.addEventListener('click', () => {
+          viewer.loadScene(sceneId);
+          setActiveButton(sceneId);
+          /* Sur mobile, scroll vers le viewer après sélection */
+          if (window.innerWidth <= 640) {
+            document.getElementById('panorama').scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+
+        container.appendChild(btn);
+      }
+
+      setActiveButton(config.default.firstScene);
+    }
+
+    function setActiveButton(sceneId) {
+      document.querySelectorAll('.scene-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.scene === sceneId);
+      });
+    }
+  </script>
+
+</body>
+</html>
